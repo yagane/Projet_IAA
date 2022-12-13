@@ -45,3 +45,7 @@ train_loader = DataLoader(train_set, **params)
 batch = next(iter(train_loader))
 total_time = time() - start_time
 print("Sampling batch time : %.3f" %total_time)
+
+print(type(train_set))
+
+
