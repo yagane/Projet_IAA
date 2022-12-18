@@ -15,7 +15,7 @@ def compute_confusion_matrix(targets, predictions, n_classes):
 
 def plot_confusion_matrix(confusion_matrix, labels, title):
 
-    cmap = plt.cm.YlOrBr
+    cmap = plt.cm.Blues
     ticks = np.arange(len(labels))
 
     plt.figure(figsize=(8,8))
