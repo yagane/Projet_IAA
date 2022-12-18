@@ -17,19 +17,13 @@ def plot_confusion_matrix(confusion_matrix, labels, title):
 
     cmap = plt.cm.YlOrBr
     ticks = np.arange(len(labels))
-    thresh = confusion_matrix.max()/2. # Threshold for text printing (black or white)
 
     plt.figure(figsize=(8,8))
     plt.imshow(confusion_matrix, interpolation='nearest', cmap=cmap)
+    plt.colorbar()
     plt.title(title)
-    plt.xticks(ticks, labels, rotation=45)
+    plt.xticks(ticks, labels)
     plt.yticks(ticks, labels)
-    
-    for i in range(confusion_matrix.shape[0]):
-            for j in range(confusion_matrix.shape[1]):
-                    plt.text(j, i, "%i"%(confusion_matrix[i, j]),
-                                ha="center", va="center",
-                                color='white' if confusion_matrix[i, j] > thresh else 'black')
     
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
